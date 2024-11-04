@@ -1,0 +1,12 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://mu18djv6xbjs"]
+
+[ext_resource type="Texture2D" uid="uid://b7mkjke1cy6e0" path="res://icon.svg" id="1_ew7lh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jj5c2"]
+texture = ExtResource("1_ew7lh")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetAtlasSource_jj5c2")

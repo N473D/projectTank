@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://okavht2cjwa4"]
+
+[ext_resource type="SpriteFrames" uid="uid://bqxbfpgf7vkxv" path="res://tanks/scenes/parts/turrets/defaultTurretTemplate.tres" id="1_alquy"]
+[ext_resource type="Script" path="res://tanks/scenes/parts/turrets/default_turret_template.gd" id="1_wculj"]
+
+[node name="DefaultTurretTemplate" type="Node2D"]
+script = ExtResource("1_wculj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_alquy")
