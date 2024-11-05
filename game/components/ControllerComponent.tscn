@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct8ugqkkihwj8"]
+
+[ext_resource type="Script" path="res://components/controller_component.gd" id="1_8elwe"]
+
+[node name="ControllerComponent" type="Node2D"]
+script = ExtResource("1_8elwe")

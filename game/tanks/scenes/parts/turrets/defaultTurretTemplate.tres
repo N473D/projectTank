@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bqxbfpgf7vkxv"]
+
+[ext_resource type="Texture2D" uid="uid://dk7h1f63ibcit" path="res://temp_tank_turret.png" id="1_7dfox"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7dfox")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

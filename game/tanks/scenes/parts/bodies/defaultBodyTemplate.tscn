@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvgmge2oex01n"]
+
+[ext_resource type="SpriteFrames" uid="uid://mfamh11dvcwo" path="res://tanks/scenes/parts/bodies/defaultBodyTemplate.tres" id="1_t4ebg"]
+[ext_resource type="Script" path="res://tanks/scenes/parts/bodies/default_body_template.gd" id="1_t5heq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwhuq"]
+size = Vector2(97, 97)
+
+[node name="DefaultBodyTemplate" type="CollisionShape2D"]
+shape = SubResource("RectangleShape2D_rwhuq")
+script = ExtResource("1_t5heq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_t4ebg")

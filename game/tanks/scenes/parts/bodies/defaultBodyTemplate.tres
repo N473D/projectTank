@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://mfamh11dvcwo"]
+
+[ext_resource type="Texture2D" uid="uid://g6patwbx0qgc" path="res://temp_tank_body.png" id="1_w1mvo"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w1mvo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

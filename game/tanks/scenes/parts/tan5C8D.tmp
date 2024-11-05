@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c16fohoacppsy"]
+
+[ext_resource type="PackedScene" uid="uid://cvgmge2oex01n" path="res://tanks/scenes/parts/bodies/defaultBodyTemplate.tscn" id="1_pyg8f"]
+[ext_resource type="Script" path="res://tanks/scenes/parts/tank.gd" id="1_yyd3y"]
+[ext_resource type="PackedScene" uid="uid://okavht2cjwa4" path="res://tanks/scenes/parts/turrets/defaultTurretTemplate.tscn" id="2_5jtx8"]
+[ext_resource type="PackedScene" uid="uid://ct8ugqkkihwj8" path="res://components/ControllerComponent.tscn" id="4_w7hi6"]
+
+[node name="Tank" type="CharacterBody2D"]
+script = ExtResource("1_yyd3y")
+
+[node name="DefaultBodyTemplate" parent="." instance=ExtResource("1_pyg8f")]
+
+[node name="DefaultTurretTemplate" parent="." instance=ExtResource("2_5jtx8")]
+
+[node name="ControllerComponent" parent="." instance=ExtResource("4_w7hi6")]
+
+[connection signal="deploy" from="ControllerComponent" to="." method="_on_controller_component_deploy"]
+[connection signal="fire" from="ControllerComponent" to="." method="_on_controller_component_fire"]
+[connection signal="move" from="ControllerComponent" to="." method="_on_controller_component_move"]
+[connection signal="target" from="ControllerComponent" to="." method="_on_controller_component_target"]
