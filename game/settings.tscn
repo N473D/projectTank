@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfhi3psthpw3c"]
+
+[ext_resource type="Script" path="res://settings.gd" id="1_ahbfg"]
+[ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://header1.tres" id="2_o2n2e"]
+[ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menu_button.tres" id="3_fik1p"]
+[ext_resource type="FontFile" uid="uid://iny3xqlycq5y" path="res://game_font.ttf" id="4_2t70q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8f3o0"]
+font = ExtResource("4_2t70q")
+font_size = 30
+
+[node name="settings" type="CanvasLayer"]
+script = ExtResource("1_ahbfg")
+
+[node name="mainLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 521.0
+offset_top = 129.0
+offset_right = -535.0
+offset_bottom = -490.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Project Tank"
+label_settings = ExtResource("2_o2n2e")
+metadata/_edit_use_anchors_ = true
+
+[node name="controller" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = -0.109375
+anchor_top = -0.0540123
+anchor_right = 1.0599
+anchor_bottom = 0.978395
+offset_left = 361.0
+offset_top = 363.0
+offset_right = -703.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="controller"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 8.0
+offset_right = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Controller"
+label_settings = ExtResource("3_fik1p")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="kbm" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = -0.109375
+anchor_top = -0.0540123
+anchor_right = 1.0599
+anchor_bottom = 0.978395
+offset_left = 731.0
+offset_top = 363.0
+offset_right = -333.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="kbm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 8.0
+offset_right = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mouse & Keyboard"
+label_settings = ExtResource("3_fik1p")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="goToMenu" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 1.02691
+anchor_bottom = 1.03241
+offset_left = 465.0
+offset_top = 446.0
+offset_right = -537.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="goToMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Go to Menu"
+label_settings = ExtResource("3_fik1p")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 376.0
+offset_top = 246.0
+offset_right = -386.0
+offset_bottom = -363.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Input Device:"
+label_settings = SubResource("LabelSettings_8f3o0")
+
+[connection signal="pressed" from="controller" to="." method="_on_controller_pressed"]
+[connection signal="pressed" from="kbm" to="." method="_on_kbm_pressed"]
+[connection signal="pressed" from="goToMenu" to="." method="_on_go_to_menu_pressed"]

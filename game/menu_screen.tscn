@@ -52,15 +52,16 @@ text = "Level Browser"
 label_settings = ExtResource("3_by3t8")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="quit" type="Button" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 520.0
-offset_top = 400.0
+offset_top = 473.0
 offset_right = -533.0
-offset_bottom = -217.0
+offset_bottom = -144.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -80,6 +81,33 @@ text = "Quit"
 label_settings = ExtResource("3_by3t8")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="settings" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 1.03385
+anchor_bottom = 1.00772
+offset_left = 498.0
+offset_top = 393.0
+offset_right = -555.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = ExtResource("3_by3t8")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="levelBrowser" to="." method="_on_level_browser_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

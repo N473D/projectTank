@@ -22,7 +22,7 @@ label_settings = ExtResource("2_i2mh4")
 metadata/_edit_use_anchors_ = true
 
 [node name="level1" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 110.0
@@ -46,7 +46,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level2" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 310.0
@@ -62,13 +62,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "2"
 label_settings = ExtResource("3_kq366")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level3" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 510.0
@@ -84,13 +86,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "3"
 label_settings = ExtResource("3_kq366")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level4" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 710.0
@@ -106,13 +110,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "4"
 label_settings = ExtResource("3_kq366")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level5" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 910.0
@@ -128,6 +134,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "5"
 horizontal_alignment = 1
 vertical_alignment = 1
