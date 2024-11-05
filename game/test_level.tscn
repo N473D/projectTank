@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://vfjdjqle2gn"]
+
+[ext_resource type="Script" path="res://test_level.gd" id="1_8en63"]
+
+[node name="testLevel" type="CanvasLayer"]
+script = ExtResource("1_8en63")
+
+[node name="Test Level" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 521.0
+offset_top = 129.0
+offset_right = -535.0
+offset_bottom = -490.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Test Level"
+metadata/_edit_use_anchors_ = true
+
+[node name="win" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 331.0
+offset_top = 265.0
+offset_right = -733.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "win
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="lose" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 695.0
+offset_top = 270.0
+offset_right = -358.0
+offset_bottom = -347.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "lose
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="win" to="." method="_on_win_pressed"]
+[connection signal="pressed" from="lose" to="." method="_on_lose_pressed"]
