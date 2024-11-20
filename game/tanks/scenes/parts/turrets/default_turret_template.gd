@@ -21,3 +21,6 @@ func _process(_delta: float) -> void:
 	#print("Between: ", theta)
 	#print("Target: ", roateTo)
 	#print("After: ", rotation)
+
+func fire_bullet(_delta: float) -> bool:
+	return false
