@@ -6,7 +6,10 @@ func _process(_delta: float) -> void:
 	#set_process(false)
 	move_direction = Input.get_vector("move_left_control_%s" % controller_id, "move_right_control_%s" % controller_id, "move_up_control_%s" % controller_id, "move_down_control_%s" % controller_id)
 	emit_signal("move", move_direction)
-	
+	if Input.is_action_pressed("attack_control_%s" % controller_id):
+			emit_signal("fire")
+
+
 func _input(event: InputEvent) -> void:
 	if is_processing():
 		if controller_id == 0:

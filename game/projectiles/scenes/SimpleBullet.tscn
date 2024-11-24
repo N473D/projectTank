@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddql6uynb2t20"]
+
+[ext_resource type="Script" path="res://projectiles/scenes/simple_bullet.gd" id="1_37ceg"]
+[ext_resource type="Texture2D" uid="uid://b7mkjke1cy6e0" path="res://icon.svg" id="2_7ts1q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x8xcd"]
+radius = 47.0
+height = 126.0
+
+[node name="SimpleBullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_37ceg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7ts1q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_x8xcd")
