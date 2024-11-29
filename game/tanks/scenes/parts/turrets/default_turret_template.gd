@@ -6,7 +6,7 @@ class_name Turret
 @export var barrelCollection : Node2D
 var numBarrel  : int = 0
 
-var roateTo : float = 0.0
+var rotateTo : float = 0.0
 
 var loaded : bool = true
 var readyToFire : bool = true
@@ -18,15 +18,15 @@ var readyToFire : bool = true
 func _on_controller_component_target(targeting : Vector2) -> void:
 	#print("Vector: ", targeting)
 	if targeting != Vector2.ZERO:
-		roateTo = targeting.angle()
+		rotateTo = targeting.angle()
 	
 func _process(_delta: float) -> void:
 	#print("Before: ", rotation)
 	var theta = 0
-	if roateTo != rotation:
-		theta = wrapf((rotation - (roateTo - (PI/2))), -PI, PI)
+	if rotateTo != rotation:
+		theta = wrapf((rotation - (rotateTo - (PI/2))), -PI, PI)
 	rotation += clamp((TAU * rotation_speed) * get_process_delta_time(), 0, abs(theta)) * sign(theta)
-	roateTo = rotation
+	rotateTo = rotation
 	#print("Between: ", theta)
 	#print("Target: ", roateTo)
 	#print("After: ", rotation)
