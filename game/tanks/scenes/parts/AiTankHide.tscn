@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj36q76v8y3de"]
+
+[ext_resource type="Script" path="res://tanks/scenes/parts/tank.gd" id="1_8risc"]
+[ext_resource type="PackedScene" uid="uid://cvgmge2oex01n" path="res://tanks/scenes/parts/bodies/defaultBodyTemplate.tscn" id="2_yaebc"]
+[ext_resource type="PackedScene" uid="uid://okavht2cjwa4" path="res://tanks/scenes/parts/turrets/defaultTurretTemplate.tscn" id="3_q6gx0"]
+[ext_resource type="PackedScene" uid="uid://ct8ugqkkihwj8" path="res://components/ControllerComponent.tscn" id="4_pry3v"]
+[ext_resource type="Script" path="res://tanks/scenes/controlTypes/AiHideSystem.gd" id="5_rf7ji"]
+
+[node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("controller", "body", "turret")]
+script = ExtResource("1_8risc")
+controller = NodePath("ControllerComponent")
+body = NodePath("DefaultBodyTemplate")
+turret = NodePath("DefaultTurretTemplate")
+
+[node name="DefaultBodyTemplate" parent="." instance=ExtResource("2_yaebc")]
+
+[node name="DefaultTurretTemplate" parent="." instance=ExtResource("3_q6gx0")]
+
+[node name="ControllerComponent" parent="." instance=ExtResource("4_pry3v")]
+script = ExtResource("5_rf7ji")
+
+[connection signal="spawnBullet" from="." to="DefaultTurretTemplate" method="_on_tank_spawn_bullet"]
+[connection signal="deploy" from="ControllerComponent" to="." method="_on_controller_component_deploy"]
+[connection signal="fire" from="ControllerComponent" to="." method="_on_controller_component_fire"]
+[connection signal="move" from="ControllerComponent" to="." method="_on_controller_component_move"]
+[connection signal="target" from="ControllerComponent" to="." method="_on_controller_component_target"]
