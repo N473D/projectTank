@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxy48a4snqhiq"]
 
-[ext_resource type="Script" path="res://level_browser.gd" id="1_ef0ql"]
-[ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://header1.tres" id="2_i2mh4"]
-[ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menu_button.tres" id="3_kq366"]
+[ext_resource type="Script" path="res://menus/level_browser.gd" id="1_ef0ql"]
+[ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://menus/header1.tres" id="2_i2mh4"]
+[ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menus/menu_button.tres" id="3_kq366"]
 
 [node name="levelBrowser" type="CanvasLayer"]
 script = ExtResource("1_ef0ql")

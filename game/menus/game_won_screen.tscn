@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca6ote8asejl1"]
+[gd_scene load_steps=4 format=3 uid="uid://c5kphysq8fivg"]
 
-[ext_resource type="Script" path="res://game_lost_screen.gd" id="1_kr081"]
-[ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://header1.tres" id="2_0ua0t"]
-[ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menu_button.tres" id="3_3oirm"]
+[ext_resource type="Script" path="res://menus/game_won_screen.gd" id="1_jlq0f"]
+[ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://menus/header1.tres" id="2_n7svy"]
+[ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menus/menu_button.tres" id="3_qbt0x"]
 
-[node name="gameLostScreen" type="CanvasLayer"]
-script = ExtResource("1_kr081")
+[node name="gameWonScreen" type="CanvasLayer"]
+script = ExtResource("1_jlq0f")
 
 [node name="gameOver" type="Label" parent="."]
 anchors_preset = 15
@@ -17,9 +17,9 @@ offset_right = -535.0
 offset_bottom = -490.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Game Lost
+text = "Game Won
 "
-label_settings = ExtResource("2_0ua0t")
+label_settings = ExtResource("2_n7svy")
 metadata/_edit_use_anchors_ = true
 
 [node name="playAgain" type="Button" parent="."]
@@ -41,7 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 0.968
 offset_bottom = 1.6
 text = "Play Again"
-label_settings = ExtResource("3_3oirm")
+label_settings = ExtResource("3_qbt0x")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -66,7 +66,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Go to Menu"
-label_settings = ExtResource("3_3oirm")
+label_settings = ExtResource("3_qbt0x")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

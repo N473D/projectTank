@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://p8kowu8jotc0"]
 
-[ext_resource type="Script" path="res://menu_screen.gd" id="1_vdxqd"]
-[ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://header1.tres" id="2_3e854"]
-[ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menu_button.tres" id="3_by3t8"]
+[ext_resource type="Script" path="res://menus/menu_screen.gd" id="1_vdxqd"]
+[ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://menus/header1.tres" id="2_3e854"]
+[ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menus/menu_button.tres" id="3_by3t8"]
 
 [node name="menuScreen" type="CanvasLayer"]
 script = ExtResource("1_vdxqd")
@@ -48,7 +48,7 @@ offset_right = 1.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Level Browser"
+text = "Play"
 label_settings = ExtResource("3_by3t8")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -108,6 +108,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="levelBrowser" to="." method="_on_level_browser_pressed"]
+[connection signal="pressed" from="levelBrowser" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

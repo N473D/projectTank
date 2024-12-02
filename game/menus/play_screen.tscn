@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbm5jdyly4ryl"]
+
+[ext_resource type="Script" path="res://menus/play_screen.gd" id="1_36j7f"]
+[ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://menus/header1.tres" id="2_7kc20"]
+[ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menus/menu_button.tres" id="3_idd42"]
+
+[node name="playScreen" type="CanvasLayer"]
+script = ExtResource("1_36j7f")
+
+[node name="mainLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 521.0
+offset_top = 129.0
+offset_right = -535.0
+offset_bottom = -490.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Project Tank"
+label_settings = ExtResource("2_7kc20")
+metadata/_edit_use_anchors_ = true
+
+[node name="levelBrowser" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = -0.109375
+anchor_top = -0.0540123
+anchor_right = 1.0599
+anchor_bottom = 0.978395
+offset_left = 550.0
+offset_top = 318.0
+offset_right = -514.0
+offset_bottom = -299.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="levelBrowser"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 8.0
+offset_right = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next"
+label_settings = ExtResource("3_idd42")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="quit" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 520.0
+offset_top = 473.0
+offset_right = -533.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 8.0
+offset_right = 1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+label_settings = ExtResource("3_idd42")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="levelBrowser" to="." method="_on_level_browser_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

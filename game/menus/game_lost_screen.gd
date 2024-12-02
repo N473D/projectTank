@@ -10,17 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _on_play_again_pressed() -> void:
+#	Change level var to be the previously played level.
+	var level = Global.get_previous_screne()
+	get_tree().change_scene_to_file(level)
 
 
 func _on_go_to_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu_screen.tscn")
-
-
-func _on_kbm_pressed() -> void:
-#	make input device kbm
-	pass # Replace with function body.
-
-
-func _on_controller_pressed() -> void:
-#	make input device controller
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://menus/menu_screen.tscn")

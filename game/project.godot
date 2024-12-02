@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="projectTank"
-run/main_scene="res://test_level1.tscn"
+run/main_scene="res://menus/menu_screen.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [display]
 
