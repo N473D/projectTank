@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://okavht2cjwa4"]
+[gd_scene load_steps=5 format=3 uid="uid://okavht2cjwa4"]
 
-[ext_resource type="SpriteFrames" uid="uid://bqxbfpgf7vkxv" path="res://tanks/scenes/parts/turrets/defaultTurretTemplate.tres" id="1_alquy"]
 [ext_resource type="Script" path="res://tanks/scenes/parts/turrets/default_turret_template.gd" id="1_wculj"]
+[ext_resource type="Texture2D" uid="uid://wmqggl808mpb" path="res://tanks/assets/default_tank_turret.png" id="2_451bp"]
 [ext_resource type="PackedScene" uid="uid://cibvbj0hf7mw4" path="res://components/spawnPoint.tscn" id="3_evxmw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkr13"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_451bp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="DefaultTurretTemplate" type="Node2D" node_paths=PackedStringArray("barrelCollection", "reloadTime", "fire_rate")]
 script = ExtResource("1_wculj")
@@ -13,7 +24,7 @@ reloadTime = NodePath("reloadDelay")
 fire_rate = NodePath("shotDelay")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("1_alquy")
+sprite_frames = SubResource("SpriteFrames_nkr13")
 
 [node name="barrelCollection" type="Node2D" parent="."]
 
