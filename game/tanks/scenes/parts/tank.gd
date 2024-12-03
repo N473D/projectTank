@@ -21,16 +21,16 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
-func _on_controller_component_move(direction : Vector2) -> void:
+func move(direction : Vector2) -> void:
 	velocity = (direction * speed)
 
-func _on_controller_component_fire() -> void:
+func fire() -> void:
 	if turret.canFire():
 		emit_signal("spawnBullet", shells, bulletSpeed)
 
-func _on_controller_component_deploy() -> void:
+func deploy() -> void:
 	pass # Replace with function body.
 
 
-func _on_controller_component_target(targeting: Vector2) -> void:
+func target(targeting: Vector2) -> void:
 	turret.rotateTo = targeting.angle()

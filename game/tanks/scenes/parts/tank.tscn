@@ -18,7 +18,7 @@ turret = NodePath("DefaultTurretTemplate")
 [node name="ControllerComponent" parent="." instance=ExtResource("4_w7hi6")]
 
 [connection signal="spawnBullet" from="." to="DefaultTurretTemplate" method="_on_tank_spawn_bullet"]
-[connection signal="deploy" from="ControllerComponent" to="." method="_on_controller_component_deploy"]
-[connection signal="fire" from="ControllerComponent" to="." method="_on_controller_component_fire"]
-[connection signal="move" from="ControllerComponent" to="." method="_on_controller_component_move"]
+[connection signal="deploy" from="ControllerComponent" to="." method="deploy"]
+[connection signal="fire" from="ControllerComponent" to="." method="fire"]
+[connection signal="move" from="ControllerComponent" to="." method="move"]
 [connection signal="target" from="ControllerComponent" to="DefaultTurretTemplate" method="_on_controller_component_target"]
