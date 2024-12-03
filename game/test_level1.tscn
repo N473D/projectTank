@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://ci58h8tq82ly7"]
+[gd_scene load_steps=19 format=4 uid="uid://ciah6u6wutlb6"]
 
 [ext_resource type="Texture2D" uid="uid://bp5yoaon7ypxl" path="res://tilesetlevel1.png" id="1_ttmuf"]
-[ext_resource type="Script" path="res://test_level_1.gd" id="2_pqvpp"]
-[ext_resource type="PackedScene" uid="uid://dk7m57uwtkn6s" path="res://menus/pauseMenu.tscn" id="3_3k2pn"]
+[ext_resource type="PackedScene" uid="uid://c16fohoacppsy" path="res://tanks/scenes/parts/tank.tscn" id="2_82elk"]
+[ext_resource type="PackedScene" uid="uid://u47gsfkx5rrd" path="res://tanks/scenes/parts/AiTankPursue.tscn" id="3_ns5bo"]
+[ext_resource type="PackedScene" uid="uid://d3qa52aktr04d" path="res://tanks/scenes/parts/AiTankRandom.tscn" id="4_1u4gp"]
+[ext_resource type="PackedScene" uid="uid://dj36q76v8y3de" path="res://tanks/scenes/parts/AiTankHide.tscn" id="5_ka57b"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_nsi0a"]
 
@@ -36,16 +38,116 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetScenesCollectionSource_nsi0a")
 sources/1 = SubResource("TileSetAtlasSource_ekicf")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_buvvp"]
+vertices = PackedVector2Array(968, 346, 1138.01, 502.023, -1010, 507.953, 180, 346, -184, 346, -716, 346, 1139.98, -629.906, 968, -250, 584, -166, 584, -506, 692, -250, 692, 6, -312, -166, -312, -506, -204, -250, -204, -38, 72, 74, 72, -106, 180, 6, 52, -166, -716, 6, -1010, -624.031, -732, -166, 911.844, -628.07, 907.844, -376, 756, -376, 756, -627.969, 52, -506, -156, 74, -184, 6, -156, -38, -732, -506, 24, -106, 24, -250)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2), PackedInt32Array(5, 4, 2), PackedInt32Array(6, 1, 0, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(16, 17, 18, 3), PackedInt32Array(19, 8, 11, 18, 17), PackedInt32Array(20, 5, 2, 21, 22), PackedInt32Array(23, 6, 7, 24), PackedInt32Array(24, 7, 10, 25), PackedInt32Array(25, 10, 9, 26), PackedInt32Array(21, 26, 9, 27), PackedInt32Array(16, 3, 4, 28), PackedInt32Array(28, 4, 29, 30), PackedInt32Array(15, 30, 29, 20), PackedInt32Array(12, 15, 20, 22), PackedInt32Array(31, 22, 21), PackedInt32Array(19, 17, 32), PackedInt32Array(19, 32, 33, 27), PackedInt32Array(27, 33, 14, 13), PackedInt32Array(21, 27, 13), PackedInt32Array(21, 13, 31)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1026, -634, -1026, 518, 1148, 512, 1150, -640, 902, -638, 898, -386, 766, -386, 766, -638), PackedVector2Array(-722, -496, -322, -496, -322, -176, -722, -176), PackedVector2Array(-706, 16, -194, 16, -194, 336, -706, 336), PackedVector2Array(62, -496, 574, -496, 574, -176, 62, -176), PackedVector2Array(-194, -240, 14, -240, 14, -96, 62, -96, 62, 64, -146, 64, -146, -48, -194, -48), PackedVector2Array(958, 16, 958, 336, 190, 336, 190, 16, 702, 16, 702, -240, 958, -240)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xer2f"]
+size = Vector2(256, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t12ty"]
+size = Vector2(384, 164)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jss30"]
+size = Vector2(637, 178)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3i51c"]
+size = Vector2(382, 160)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks51a"]
+size = Vector2(126, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xangr"]
+size = Vector2(131, 1528)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_378yg"]
+size = Vector2(126, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ncb5"]
+size = Vector2(127, 1557)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5o5x6"]
+size = Vector2(128, 250)
+
 [node name="Node2D" type="TileMapLayer"]
-position = Vector2(534, 350)
-scale = Vector2(0.37, 0.37)
+position = Vector2(577, 512)
+scale = Vector2(0.5, 0.5)
 tile_map_data = PackedByteArray("AAD4////AQADAAEAAAAIAP//AQADAAAAAAD4/wQAAQABAAAAAAD4//z/AQADAAEAAAD4//3/AQADAAEAAAD4//7/AQADAAEAAAD4/wMAAQADAAEAAAD4/wIAAQADAAEAAAD4/wEAAQADAAEAAAD4/wAAAQADAAEAAAD4//v/AQAAAAMAAAD5//v/AQABAAIAAAD6//v/AQABAAIAAAD7//v/AQABAAIAAAD8//v/AQABAAIAAAD9//v/AQABAAIAAAD+//v/AQABAAIAAAD///v/AQABAAIAAAAAAPv/AQABAAIAAAABAPv/AQABAAIAAAACAPv/AQABAAIAAAACAPz/AQABAAAAAAADAPz/AQABAAAAAAAEAPz/AQADAAAAAAAFAPz/AQADAAAAAAAGAPz/AQABAAEAAAADAPv/AQABAAIAAAAEAPv/AQABAAIAAAAFAPv/AQABAAIAAAAGAPv/AQABAAAAAAAHAPv/AQAAAAMAAAAHAPz/AQADAAEAAAAIAPv/AQABAAIAAAAIAPz/AQADAAAAAAAIAP3/AQADAAAAAAAIAP7/AQADAAAAAAAIAAAAAQADAAAAAAAIAAEAAQADAAAAAAAIAAIAAQADAAAAAAAIAAMAAQADAAAAAAAIAAQAAQABAAAAAAAHAAQAAQABAAAAAAAGAAQAAQABAAAAAAAFAAQAAQABAAAAAAAEAAQAAQABAAAAAAADAAQAAQABAAAAAAACAAQAAQABAAAAAAABAAQAAQABAAAAAAAAAAQAAQABAAAAAAD//wQAAQABAAAAAAD+/wQAAQABAAAAAAD9/wQAAQABAAAAAAD8/wQAAQABAAAAAAD7/wQAAQABAAAAAAD6/wQAAQABAAAAAAD5/wQAAQABAAAAAAD5/wMAAQADAAAAAAD5/wIAAQADAAAAAAD5/wEAAQADAAAAAAD5/wAAAQADAAAAAAD5////AQADAAAAAAD5//7/AQADAAAAAAD5//3/AQADAAAAAAD5//z/AQADAAAAAAD6//3/AQADAAAAAAD6//z/AQADAAAAAAD7//z/AQABAAAAAAD8//z/AQABAAAAAAD9//z/AQADAAAAAAD+//z/AQADAAAAAAD///z/AQADAAAAAAAAAPz/AQADAAAAAAABAPz/AQABAAAAAAD7//3/AQABAAEAAAD8//3/AQABAAEAAAD9//3/AQADAAEAAAD+//3/AQADAAAAAAD///3/AQADAAAAAAAAAP3/AQADAAAAAAABAP3/AQABAAEAAAACAP3/AQABAAEAAAD9//7/AQABAAMAAAD+//7/AQADAAAAAAD9////AQADAAAAAAD8////AQADAAAAAAD7////AQADAAAAAAD6////AQADAAAAAAD6//7/AQADAAAAAAD7//7/AQABAAIAAAD8//7/AQABAAIAAAD6/wAAAQADAAAAAAD6/wEAAQADAAAAAAD6/wIAAQADAAAAAAD7/wMAAQADAAAAAAD6/wMAAQADAAAAAAD7/wAAAQABAAAAAAD8/wAAAQABAAAAAAD9/wAAAQABAAAAAAD9/wEAAQABAAEAAAD8/wEAAQABAAEAAAD8/wIAAQABAAIAAAD7/wIAAQABAAIAAAD7/wEAAQABAAEAAAD+/wAAAQADAAAAAAD/////AQABAAEAAAD+////AQADAAAAAAD///7/AQABAAAAAAAAAP7/AQADAAAAAAABAP7/AQABAAIAAAABAP//AQADAAAAAAAAAP//AQADAAEAAAADAP3/AQABAAEAAAAEAP3/AQADAAEAAAADAP7/AQABAAIAAAACAP7/AQABAAIAAAAFAP3/AQADAAAAAAAGAP3/AQABAAIAAAAFAP7/AQADAAAAAAAEAP7/AQABAAMAAAAHAP3/AQABAAMAAAAHAP7/AQADAAAAAAAGAP7/AQABAAAAAAAGAP//AQABAAAAAAAFAP//AQADAAAAAAAEAP//AQADAAAAAAADAP//AQADAAAAAAACAP//AQADAAAAAAAHAP//AQADAAEAAAAHAAAAAQADAAEAAAAHAAEAAQADAAEAAAAGAAEAAQABAAEAAAAHAAIAAQABAAMAAAAHAAMAAQADAAAAAAAGAAMAAQADAAAAAAAGAAIAAQABAAIAAAAGAAAAAQABAAAAAAAFAAIAAQABAAIAAAAFAAMAAQADAAAAAAAEAAMAAQADAAAAAAAEAAIAAQABAAIAAAAEAAEAAQABAAEAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAFAAEAAQABAAEAAAADAAIAAQABAAIAAAADAAEAAQABAAEAAAACAAEAAQABAAEAAAABAAEAAQADAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAACAAIAAQABAAIAAAACAAMAAQADAAAAAAABAAMAAQADAAAAAAAAAAMAAQADAAAAAAAAAAIAAQADAAAAAAD//wIAAQADAAAAAAD+/wIAAQABAAMAAAD9/wIAAQABAAIAAAD+/wEAAQADAAEAAAD//wAAAQABAAIAAAAAAAAAAQABAAMAAAABAAAAAQADAAAAAAAAAAEAAQADAAAAAAD//wEAAQADAAAAAAD//wMAAQADAAAAAAD+/wMAAQADAAAAAAD9/wMAAQADAAAAAAD8/wMAAQADAAAAAAABAAIAAQADAAAAAAADAAMAAQADAAAAAAD4//r/AQABAAEAAAD5//r/AQABAAEAAAD6//r/AQABAAEAAAD7//r/AQABAAEAAAD8//r/AQABAAEAAAD9//r/AQABAAEAAAD+//r/AQABAAEAAAD///r/AQABAAEAAAAAAPr/AQABAAEAAAABAPr/AQABAAEAAAACAPr/AQABAAEAAAADAPr/AQABAAEAAAAEAPr/AQABAAEAAAAFAPr/AQABAAEAAAAGAPr/AQABAAAAAAAHAPr/AQABAAEAAAAIAPr/AQABAAEAAAD4//n/AQABAAAAAAD5//n/AQABAAAAAAD6//n/AQABAAAAAAD7//n/AQABAAAAAAD8//n/AQABAAAAAAD9//n/AQABAAAAAAD+//n/AQABAAAAAAD///n/AQABAAAAAAAAAPn/AQABAAAAAAABAPn/AQABAAAAAAACAPn/AQABAAAAAAADAPn/AQABAAAAAAAEAPn/AQABAAAAAAAFAPn/AQABAAAAAAAGAPn/AQABAAAAAAAHAPn/AQABAAAAAAAIAPn/AQABAAAAAAAJAPn/AQABAAAAAAAJAPr/AQABAAAAAAAJAPv/AQABAAAAAAAJAPz/AQABAAAAAAAJAP3/AQABAAAAAAAJAP7/AQABAAAAAAAJAP//AQABAAAAAAAJAAAAAQABAAAAAAAJAAEAAQABAAAAAAAJAAIAAQABAAAAAAAJAAMAAQABAAAAAAAJAAQAAQABAAAAAAD3//n/AQABAAAAAAD3//r/AQABAAAAAAD3//v/AQABAAAAAAD3//z/AQABAAAAAAD3//3/AQABAAAAAAD3//7/AQABAAAAAAD3////AQABAAAAAAD3/wAAAQABAAAAAAD3/wEAAQABAAAAAAD3/wIAAQABAAAAAAD3/wMAAQABAAAAAAD3/wQAAQABAAAAAAD3/wUAAQABAAEAAAD4/wUAAQABAAEAAAD5/wUAAQABAAEAAAD6/wUAAQABAAEAAAD7/wUAAQABAAEAAAD8/wUAAQABAAEAAAD9/wUAAQABAAEAAAD+/wUAAQABAAEAAAD//wUAAQABAAEAAAAAAAUAAQABAAEAAAABAAUAAQABAAEAAAACAAUAAQABAAEAAAADAAUAAQABAAEAAAAEAAUAAQABAAEAAAAFAAUAAQABAAEAAAAGAAUAAQABAAEAAAAHAAUAAQABAAEAAAAIAAUAAQABAAEAAAAJAAUAAQABAAEAAAA=")
 tile_set = SubResource("TileSet_2bl5h")
-script = ExtResource("2_pqvpp")
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_3k2pn")]
-visible = false
-offset = Vector2(-455.38, -259.285)
-scale = Vector2(1.79, 1.79)
-transform = Transform2D(1.79, 0, 0, 1.79, -455.38, -259.285)
-follow_viewport_enabled = true
+[node name="Player" parent="." instance=ExtResource("2_82elk")]
+position = Vector2(71, 188)
+collision_layer = 2
+collision_mask = 2
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_buvvp")
+navigation_layers = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" groups=["Cover"]]
+position = Vector2(-512, -339)
+shape = SubResource("RectangleShape2D_xer2f")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" groups=["Cover"]]
+position = Vector2(-448, 174)
+shape = SubResource("RectangleShape2D_t12ty")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" groups=["Cover"]]
+position = Vector2(575.5, 165)
+shape = SubResource("RectangleShape2D_jss30")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" groups=["Cover"]]
+position = Vector2(319, -338)
+shape = SubResource("RectangleShape2D_3i51c")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" groups=["Cover"]]
+position = Vector2(-65, -86)
+shape = SubResource("RectangleShape2D_ks51a")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D"]
+position = Vector2(-1085.5, -130)
+shape = SubResource("RectangleShape2D_xangr")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D"]
+position = Vector2(831, -642)
+shape = SubResource("RectangleShape2D_378yg")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D"]
+position = Vector2(1216.5, -110.5)
+shape = SubResource("RectangleShape2D_0ncb5")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D" groups=["Cover"]]
+position = Vector2(832, -49)
+shape = SubResource("RectangleShape2D_5o5x6")
+
+[node name="RandomBot" parent="." instance=ExtResource("4_1u4gp")]
+position = Vector2(-98, -432)
+collision_layer = 2
+collision_mask = 2
+speed = 100.0
+
+[node name="RayCast2D" type="RayCast2D" parent="RandomBot"]
+collision_mask = 2
+
+[node name="PursueBot" parent="." instance=ExtResource("3_ns5bo")]
+position = Vector2(-898, 384)
+collision_layer = 2
+collision_mask = 2
+speed = 0.0
+
+[node name="RayCast2D" type="RayCast2D" parent="PursueBot"]
+collision_mask = 2
+
+[node name="HideBot" parent="." instance=ExtResource("5_ka57b")]
+position = Vector2(830, -304)
+collision_layer = 2
+collision_mask = 2
+speed = 100.0
+
+[node name="RayCast2D" type="RayCast2D" parent="HideBot"]
+collision_mask = 2
