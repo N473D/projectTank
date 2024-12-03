@@ -13,9 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_win_pressed() -> void:
 	Global.set_previous_screne(get_tree().current_scene.scene_file_path)
-	get_tree().change_scene_to_file("res://game_won_screen.tscn")
+	get_tree().change_scene_to_file("res://menus/game_won_screen.tscn")
 
 
 func _on_lose_pressed() -> void:
 	Global.set_previous_screne(get_tree().current_scene.scene_file_path)
-	get_tree().change_scene_to_file("res://game_lost_screen.tscn")
+	get_tree().change_scene_to_file("res://menus/game_lost_screen.tscn")

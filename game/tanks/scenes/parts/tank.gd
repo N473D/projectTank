@@ -12,6 +12,7 @@ func _init() -> void:
 	pass
 
 func _ready() -> void:
+	add_to_group("Player")
 	for child in self.get_children():
 		if child is ControlSystem and child != controller:
 			child.set_process(false)
@@ -29,3 +30,7 @@ func _on_controller_component_fire() -> void:
 
 func _on_controller_component_deploy() -> void:
 	pass # Replace with function body.
+
+
+func _on_controller_component_target(targeting: Vector2) -> void:
+	turret.rotateTo = targeting.angle()
