@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,6 +22,7 @@ func toggle() -> void:
 	if !self.visible:
 		self.visible = true
 		get_tree().paused = true
+		print("bismullah")
 	else:
 		self.visible = false
 		get_tree().paused = false
