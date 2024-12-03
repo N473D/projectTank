@@ -22,7 +22,6 @@ func toggle() -> void:
 	if !self.visible:
 		self.visible = true
 		get_tree().paused = true
-		print("bismullah")
 	else:
 		self.visible = false
 		get_tree().paused = false
