@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://vfjdjqle2gn"]
 
-[ext_resource type="Script" path="res://test_level.gd" id="1_8en63"]
+[ext_resource type="Script" path="res://menus/test_level.gd" id="1_xl4jh"]
 
 [node name="testLevel" type="CanvasLayer"]
-script = ExtResource("1_8en63")
+script = ExtResource("1_xl4jh")
 
 [node name="Test Level" type="Label" parent="."]
 anchors_preset = 15
