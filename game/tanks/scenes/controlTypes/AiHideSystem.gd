@@ -124,5 +124,5 @@ func can_fire():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider == player:
-			return (state == 2) && (randf() < 0.05)  #  5% chance to fire if player is in sight and in attacking state
+			return (state == 2) && (randf() < 0.00)  #  5% chance to fire if player is in sight and in attacking state
 	return false

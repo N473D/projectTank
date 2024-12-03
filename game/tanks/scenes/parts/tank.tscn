@@ -21,4 +21,4 @@ turret = NodePath("DefaultTurretTemplate")
 [connection signal="deploy" from="ControllerComponent" to="." method="deploy"]
 [connection signal="fire" from="ControllerComponent" to="." method="fire"]
 [connection signal="move" from="ControllerComponent" to="." method="move"]
-[connection signal="target" from="ControllerComponent" to="DefaultTurretTemplate" method="_on_controller_component_target"]
+[connection signal="target" from="ControllerComponent" to="." method="target"]

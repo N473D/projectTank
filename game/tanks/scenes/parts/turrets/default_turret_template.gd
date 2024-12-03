@@ -24,7 +24,7 @@ func _process(_delta: float) -> void:
 	#print("Before: ", rotation)
 	var theta = 0
 	if rotateTo != rotation:
-		theta = wrapf((rotation - (rotateTo - (PI/2))), -PI, PI)
+		theta = wrapf((rotation - (rotateTo + (PI/2))), -PI, PI)
 	rotation += clamp((TAU * rotation_speed) * get_process_delta_time(), 0, abs(theta)) * sign(theta)
 	rotateTo = rotation
 	#print("Between: ", theta)

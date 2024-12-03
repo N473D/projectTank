@@ -7,14 +7,20 @@
 radius = 47.0
 height = 126.0
 
-[node name="SimpleBullet" type="RigidBody2D"]
-scale = Vector2(0.1, 0.1)
+[node name="SimpleBullet" type="RigidBody2D" node_paths=PackedStringArray("despawn")]
+scale = Vector2(0.0104357, 0.0159667)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_37ceg")
+despawn = NodePath("Timer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_7ts1q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_x8xcd")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

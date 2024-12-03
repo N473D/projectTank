@@ -20,7 +20,7 @@ turret = NodePath("DefaultTurretTemplate")
 script = ExtResource("5_rf7ji")
 
 [connection signal="spawnBullet" from="." to="DefaultTurretTemplate" method="_on_tank_spawn_bullet"]
-[connection signal="deploy" from="ControllerComponent" to="." method="_on_controller_component_deploy"]
-[connection signal="fire" from="ControllerComponent" to="." method="_on_controller_component_fire"]
-[connection signal="move" from="ControllerComponent" to="." method="_on_controller_component_move"]
-[connection signal="target" from="ControllerComponent" to="." method="_on_controller_component_target"]
+[connection signal="deploy" from="ControllerComponent" to="." method="deploy"]
+[connection signal="fire" from="ControllerComponent" to="." method="fire"]
+[connection signal="move" from="ControllerComponent" to="." method="move"]
+[connection signal="target" from="ControllerComponent" to="." method="target"]
