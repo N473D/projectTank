@@ -1,10 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://okavht2cjwa4"]
+[gd_scene load_steps=4 format=3 uid="uid://okavht2cjwa4"]
 
 [ext_resource type="SpriteFrames" uid="uid://bqxbfpgf7vkxv" path="res://tanks/scenes/parts/turrets/defaultTurretTemplate.tres" id="1_alquy"]
 [ext_resource type="Script" path="res://tanks/scenes/parts/turrets/default_turret_template.gd" id="1_wculj"]
+[ext_resource type="PackedScene" uid="uid://cibvbj0hf7mw4" path="res://components/spawnPoint.tscn" id="3_evxmw"]
 
-[node name="DefaultTurretTemplate" type="Node2D"]
+[node name="DefaultTurretTemplate" type="Node2D" node_paths=PackedStringArray("barrelCollection", "reloadTime", "fire_rate")]
 script = ExtResource("1_wculj")
+barrelCollection = NodePath("barrelCollection")
+roundsChambered = 50
+maxRounds = 12
+reloadTime = NodePath("reloadDelay")
+fire_rate = NodePath("shotDelay")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_alquy")
+
+[node name="barrelCollection" type="Node2D" parent="."]
+
+[node name="SpawnPoint" parent="barrelCollection" instance=ExtResource("3_evxmw")]
+
+[node name="shotDelay" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="reloadDelay" type="Timer" parent="."]
+wait_time = 20.0
+
+[connection signal="timeout" from="shotDelay" to="." method="_on_shot_delay_timeout"]
+[connection signal="timeout" from="reloadDelay" to="." method="_on_reload_delay_timeout"]

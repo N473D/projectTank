@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0i8x1an0l42n"
-path="res://.godot/imported/Crosshair.png-1956ffc22614618aaaacdf35a0cc4cd2.ctex"
+uid="uid://dk7h1f63ibcit"
+path="res://.godot/imported/temp_tank_turret.png-ae1c74926616d6788b5c61505b8db82d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Crosshair.png"
-dest_files=["res://.godot/imported/Crosshair.png-1956ffc22614618aaaacdf35a0cc4cd2.ctex"]
+source_file="res://tanks/assets/temp_tank_turret.png"
+dest_files=["res://.godot/imported/temp_tank_turret.png-ae1c74926616d6788b5c61505b8db82d.ctex"]
 
 [params]
 
