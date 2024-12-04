@@ -1,72 +1,89 @@
-[gd_scene load_steps=4 format=3 uid="uid://p8kowu8jotc0"]
+[gd_scene load_steps=5 format=3 uid="uid://p8kowu8jotc0"]
 
 [ext_resource type="Script" path="res://menus/menu_screen.gd" id="1_vdxqd"]
+[ext_resource type="PackedScene" uid="uid://bh77ymvpxm41" path="res://menus/background.tscn" id="2_0nbcy"]
 [ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://menus/header1.tres" id="2_3e854"]
 [ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menus/menu_button.tres" id="3_by3t8"]
 
-[node name="menuScreen" type="CanvasLayer"]
+[node name="menuScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_vdxqd")
 
-[node name="mainLabel" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 521.0
-offset_top = 129.0
-offset_right = -535.0
-offset_bottom = -490.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Project Tank"
-label_settings = ExtResource("2_3e854")
-metadata/_edit_use_anchors_ = true
-
-[node name="levelBrowser" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = -0.109375
-anchor_top = -0.0540123
-anchor_right = 1.0599
-anchor_bottom = 0.978395
-offset_left = 550.0
-offset_top = 318.0
-offset_right = -514.0
-offset_bottom = -299.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="levelBrowser"]
+[node name="Background" parent="." instance=ExtResource("2_0nbcy")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 8.0
-offset_right = 1.0
-offset_bottom = -8.0
+
+[node name="ButtonHolder" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="levelBrowser" type="Button" parent="ButtonHolder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -15.5
+offset_right = 4.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "               "
+
+[node name="Label" type="Label" parent="ButtonHolder/levelBrowser"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
 label_settings = ExtResource("3_by3t8")
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="quit" type="Button" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
+[node name="quit" type="Button" parent="ButtonHolder"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 520.0
-offset_top = 473.0
-offset_right = -533.0
-offset_bottom = -144.0
+offset_left = -35.0
+offset_top = 173.0
+offset_right = 36.0
+offset_bottom = 204.0
 grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+grow_vertical = 0
+text = "               "
 
-[node name="Label" type="Label" parent="quit"]
+[node name="Label" type="Label" parent="ButtonHolder/quit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -83,19 +100,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="settings" type="Button" parent="."]
-anchors_preset = -1
-anchor_right = 1.03385
-anchor_bottom = 1.00772
-offset_left = 498.0
-offset_top = 393.0
-offset_right = -555.0
-offset_bottom = -224.0
+[node name="settings" type="Button" parent="ButtonHolder"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = 63.0
+offset_right = 67.0
+offset_bottom = 94.0
 grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+grow_vertical = 0
+text = "                              "
 
-[node name="Label" type="Label" parent="settings"]
+[node name="Label" type="Label" parent="ButtonHolder/settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -106,8 +126,22 @@ text = "Settings"
 label_settings = ExtResource("3_by3t8")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="mainLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -259.0
+offset_top = -143.0
+offset_right = 341.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Project Tank"
+label_settings = ExtResource("2_3e854")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="levelBrowser" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="ButtonHolder/levelBrowser" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ButtonHolder/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ButtonHolder/settings" to="." method="_on_settings_pressed"]

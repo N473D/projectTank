@@ -1,24 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk7m57uwtkn6s"]
+[gd_scene load_steps=5 format=3 uid="uid://dk7m57uwtkn6s"]
 
 [ext_resource type="Script" path="res://menus/pause_menu.gd" id="1_s303n"]
 [ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menus/menu_button.tres" id="2_j7slm"]
 
-[node name="PauseMenu" type="CanvasLayer"]
-process_mode = 2
-script = ExtResource("1_s303n")
+[sub_resource type="Gradient" id="Gradient_ncfc1"]
+offsets = PackedFloat32Array(0, 0.188312, 0.987013, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.953947, 0, 0, 0, 1, 1, 1, 1, 0)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xqoty"]
+gradient = SubResource("Gradient_ncfc1")
+width = 149
+height = 149
+fill = 1
+fill_from = Vector2(0.505, 0.535)
+fill_to = Vector2(3.305, 0.53)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -10.0
-offset_right = 4.0
-offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_s303n")
+
+[node name="CanvasLayer" type="Sprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(96.903, -60.675)
+texture = SubResource("GradientTexture2D_xqoty")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -278.0
+offset_top = -145.0
+offset_right = -174.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.63, 4.63)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

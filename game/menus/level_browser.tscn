@@ -1,13 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxy48a4snqhiq"]
+[gd_scene load_steps=5 format=3 uid="uid://bxy48a4snqhiq"]
 
 [ext_resource type="Script" path="res://menus/level_browser.gd" id="1_ef0ql"]
+[ext_resource type="PackedScene" uid="uid://bh77ymvpxm41" path="res://menus/background.tscn" id="2_5m6qe"]
 [ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://menus/header1.tres" id="2_i2mh4"]
 [ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menus/menu_button.tres" id="3_kq366"]
 
-[node name="levelBrowser" type="CanvasLayer"]
+[node name="levelBrowser" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ef0ql")
 
+[node name="Background" parent="." instance=ExtResource("2_5m6qe")]
+layout_mode = 1
+
 [node name="selectLabel" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,6 +35,7 @@ label_settings = ExtResource("2_i2mh4")
 metadata/_edit_use_anchors_ = true
 
 [node name="level1" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -31,6 +45,7 @@ offset_right = -892.0
 offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "      "
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="level1"]
@@ -46,6 +61,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level2" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,6 +71,7 @@ offset_right = -692.0
 offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "      "
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="level2"]
@@ -70,6 +87,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level3" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -79,6 +97,7 @@ offset_right = -492.0
 offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "      "
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="level3"]
@@ -94,6 +113,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level4" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -103,6 +123,7 @@ offset_right = -292.0
 offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "      "
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="level4"]
@@ -118,6 +139,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="level5" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -127,6 +149,7 @@ offset_right = -92.0
 offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "      "
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="level5"]
@@ -141,6 +164,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="goToMenu" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.02691
 anchor_bottom = 1.03241
@@ -150,6 +174,7 @@ offset_right = -507.0
 offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "                                      "
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="goToMenu"]
