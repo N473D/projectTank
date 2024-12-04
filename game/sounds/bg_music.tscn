@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bithsovxy4w73"]
+
+[ext_resource type="AudioStream" uid="uid://cpcdhsf0utwvp" path="res://sounds/aiGendBackgroundMusic.mp3" id="1_qs0i4"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_qs0i4")
+autoplay = true
+bus = &"Music"

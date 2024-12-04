@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh77ymvpxm41"]
+
+[ext_resource type="Script" path="res://menus/control.gd" id="1_8osfm"]
+[ext_resource type="PackedScene" uid="uid://ulhf3nltw5r1" path="res://test_tilemap.tscn" id="2_w3uh2"]
+
+[sub_resource type="Gradient" id="Gradient_cjanj"]
+offsets = PackedFloat32Array(0, 0.188312, 0.987013, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.953947, 0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_klkft"]
+gradient = SubResource("Gradient_cjanj")
+width = 149
+height = 149
+fill = 1
+fill_from = Vector2(0.505, 0.535)
+fill_to = Vector2(3.305, 0.53)
+
+[node name="Background" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8osfm")
+
+[node name="Node2D" parent="." instance=ExtResource("2_w3uh2")]
+position = Vector2(-80, -44)
+scale = Vector2(1.08569, 1.38956)
+
+[node name="CanvasLayer" type="Sprite2D" parent="."]
+scale = Vector2(-13.2029, 8.26675)
+texture = SubResource("GradientTexture2D_klkft")

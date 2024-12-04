@@ -1,18 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfhi3psthpw3c"]
+[gd_scene load_steps=7 format=3 uid="uid://dfhi3psthpw3c"]
 
 [ext_resource type="Script" path="res://menus/settings.gd" id="1_ahbfg"]
+[ext_resource type="PackedScene" uid="uid://bh77ymvpxm41" path="res://menus/background.tscn" id="2_ffiqr"]
 [ext_resource type="LabelSettings" uid="uid://dl2x8x5t28i77" path="res://menus/header1.tres" id="2_o2n2e"]
 [ext_resource type="LabelSettings" uid="uid://buwuq1siy1dvb" path="res://menus/menu_button.tres" id="3_fik1p"]
-[ext_resource type="FontFile" uid="uid://iny3xqlycq5y" path="res://menus/game_font.ttf" id="4_2t70q"]
+[ext_resource type="LabelSettings" uid="uid://dksfyktkopnrs" path="res://menus/header2.tres" id="4_40p40"]
+[ext_resource type="PackedScene" uid="uid://bse0dp1t7lp4m" path="res://menus/volume_slider.tscn" id="6_fb06o"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_8f3o0"]
-font = ExtResource("4_2t70q")
-font_size = 30
-
-[node name="settings" type="CanvasLayer"]
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ahbfg")
 
+[node name="Background" parent="." instance=ExtResource("2_ffiqr")]
+layout_mode = 1
+
 [node name="mainLabel" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -26,23 +36,35 @@ text = "Project Tank"
 label_settings = ExtResource("2_o2n2e")
 metadata/_edit_use_anchors_ = true
 
-[node name="controller" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = -0.109375
-anchor_top = -0.0540123
-anchor_right = 1.0599
-anchor_bottom = 0.978395
-offset_left = 361.0
-offset_top = 363.0
-offset_right = -703.0
-offset_bottom = -254.0
+[node name="Container" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -74.0
+offset_right = 190.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "
-"
-metadata/_edit_use_anchors_ = true
+text = "Input Device:"
+label_settings = ExtResource("4_40p40")
 
-[node name="Label" type="Label" parent="controller"]
+[node name="controller" type="Button" parent="Container"]
+layout_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -242.0
+offset_right = -71.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "                                       "
+
+[node name="Label" type="Label" parent="Container/controller"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,23 +81,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="kbm" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = -0.109375
-anchor_top = -0.0540123
-anchor_right = 1.0599
-anchor_bottom = 0.978395
-offset_left = 731.0
-offset_top = 363.0
-offset_right = -333.0
-offset_bottom = -254.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "
-"
-metadata/_edit_use_anchors_ = true
+[node name="kbm" type="Button" parent="Container"]
+layout_mode = 2
+offset_right = 270.0
+offset_bottom = 31.0
+text = "                                                               "
 
-[node name="Label" type="Label" parent="kbm"]
+[node name="Label" type="Label" parent="Container/kbm"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,16 +105,19 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="goToMenu" type="Button" parent="."]
-anchors_preset = -1
-anchor_right = 1.02691
-anchor_bottom = 1.03241
-offset_left = 465.0
-offset_top = 446.0
-offset_right = -537.0
-offset_bottom = -171.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = 195.0
+offset_right = 86.0
+offset_bottom = 226.0
 grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+grow_vertical = 0
+text = "                                       "
 
 [node name="Label" type="Label" parent="goToMenu"]
 layout_mode = 1
@@ -117,19 +132,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 376.0
-offset_top = 246.0
-offset_right = -386.0
-offset_bottom = -363.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Input Device:"
-label_settings = SubResource("LabelSettings_8f3o0")
+[node name="Control" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -172.0
+offset_top = 83.0
+offset_right = 188.0
+offset_bottom = 134.0
 
-[connection signal="pressed" from="controller" to="." method="_on_controller_pressed"]
-[connection signal="pressed" from="kbm" to="." method="_on_kbm_pressed"]
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+text = "Music Volume"
+label_settings = ExtResource("4_40p40")
+
+[node name="HSlider" parent="Control" instance=ExtResource("6_fb06o")]
+layout_mode = 2
+bus_name = "Music"
+
+[connection signal="pressed" from="Container/controller" to="." method="_on_controller_pressed"]
+[connection signal="pressed" from="Container/kbm" to="." method="_on_kbm_pressed"]
 [connection signal="pressed" from="goToMenu" to="." method="_on_go_to_menu_pressed"]
