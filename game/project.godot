@@ -248,15 +248,6 @@ pause={
 2d_physics/layer_3="projectiles"
 2d_physics/layer_4="ramps"
 
-[layer_names]
-
-2d_render/layer_1="ground"
-2d_render/layer_2="ramps"
-2d_physics/layer_1="walls and ground"
-2d_physics/layer_2="tanks"
-2d_physics/layer_3="projectiles"
-2d_physics/layer_4="ramps"
-
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

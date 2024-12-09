@@ -33,7 +33,3 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		if get_tree().current_scene.get_node_or_null("PauseMenu"):
 			get_tree().current_scene.get_node("PauseMenu").toggle()
-
-
-	
-		

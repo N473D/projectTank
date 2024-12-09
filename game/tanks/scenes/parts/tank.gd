@@ -1,9 +1,10 @@
 class_name Tank extends CharacterBody2D
-
+#var defaultBod = load("res://tanks/scenes/parts/bodies/defaultBodyTemplate.tscn")
+#var defaultTurret = load("res://tanks/scenes/parts/turrets/defaultTurretTemplate.tscn")
 @export var speed = 300.0
-@export var controller : ControlSystem
-@export var body : Body
-@export var turret : Turret
+@export var controller: ControlSystem
+@export var body : Body 
+@export var turret : Turret 
 @export var bulletSpeed : int = 300
 var shells = load("res://projectiles/scenes/SimpleBullet.tscn")
 signal spawnBullet

@@ -36,7 +36,7 @@ func canFire() -> bool:
 
 
 func _on_tank_spawn_bullet(shell, speed:int) -> void:
-	barrelCollection.get_child((numBarrel % barrelCollection.get_child_count())).spawnRidged(shell.instantiate(), Vector2(speed, 0).rotated(rotation - (PI/2)), rotation)
+	barrelCollection.get_child((numBarrel % barrelCollection.get_child_count())).spawnRidged(shell.instantiate(), Vector2.RIGHT.rotated(rotation).normalized(), rotation)
 	numBarrel += 1
 	roundsChambered -= 1
 	if roundsChambered <= 0:

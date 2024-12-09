@@ -18,12 +18,13 @@ sprite_frames = ExtResource("1_alquy")
 [node name="barrelCollection" type="Node2D" parent="."]
 
 [node name="SpawnPoint" parent="barrelCollection" instance=ExtResource("3_evxmw")]
+position = Vector2(0, 70)
 
 [node name="shotDelay" type="Timer" parent="."]
 wait_time = 0.25
 
 [node name="reloadDelay" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 2.0
 
 [connection signal="timeout" from="shotDelay" to="." method="_on_shot_delay_timeout"]
 [connection signal="timeout" from="reloadDelay" to="." method="_on_reload_delay_timeout"]

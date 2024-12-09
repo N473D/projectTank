@@ -1,28 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://c16fohoacppsy"]
+[gd_scene load_steps=5 format=3 uid="uid://c16fohoacppsy"]
 
 [ext_resource type="PackedScene" uid="uid://cvgmge2oex01n" path="res://tanks/scenes/parts/bodies/defaultBodyTemplate.tscn" id="1_pyg8f"]
 [ext_resource type="Script" path="res://tanks/scenes/parts/tank.gd" id="1_yyd3y"]
 [ext_resource type="PackedScene" uid="uid://okavht2cjwa4" path="res://tanks/scenes/parts/turrets/defaultTurretTemplate.tscn" id="2_5jtx8"]
 [ext_resource type="PackedScene" uid="uid://ct8ugqkkihwj8" path="res://components/ControllerComponent.tscn" id="4_w7hi6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tel6t"]
-radius = 47.0106
-
 [node name="Tank" type="CharacterBody2D" node_paths=PackedStringArray("controller", "body", "turret")]
 script = ExtResource("1_yyd3y")
+speed = null
+bulletSpeed = null
 controller = NodePath("ControllerComponent")
 body = NodePath("DefaultBodyTemplate")
 turret = NodePath("DefaultTurretTemplate")
 
 [node name="DefaultBodyTemplate" parent="." instance=ExtResource("1_pyg8f")]
-shape = SubResource("CircleShape2D_tel6t")
 
 [node name="DefaultTurretTemplate" parent="." instance=ExtResource("2_5jtx8")]
 
 [node name="ControllerComponent" parent="." instance=ExtResource("4_w7hi6")]
 
 [connection signal="spawnBullet" from="." to="DefaultTurretTemplate" method="_on_tank_spawn_bullet"]
-[connection signal="deploy" from="ControllerComponent" to="." method="_on_controller_component_deploy"]
-[connection signal="fire" from="ControllerComponent" to="." method="_on_controller_component_fire"]
-[connection signal="move" from="ControllerComponent" to="." method="_on_controller_component_move"]
-[connection signal="target" from="ControllerComponent" to="DefaultTurretTemplate" method="_on_controller_component_target"]
+[connection signal="deploy" from="ControllerComponent" to="." method="deploy"]
+[connection signal="fire" from="ControllerComponent" to="." method="fire"]
+[connection signal="move" from="ControllerComponent" to="." method="move"]
+[connection signal="target" from="ControllerComponent" to="." method="target"]
